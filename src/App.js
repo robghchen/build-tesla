@@ -3,10 +3,10 @@ import './App.scss';
 
 class App extends Component {
 	state = {
-		page: 'exterior',
-		model: 'model3',
-		color: 'white',
-		wheel: 'aero',
+		page: 'model',
+		model: null,
+		color: null,
+		wheel: null,
 	};
 
 	renderModelPage = () => {
@@ -63,6 +63,7 @@ class App extends Component {
 						<div className="buttons">
 							<img src={'tesla/interiorBlackButton.png'} alt="interior black button" onClick={() => this.setState({ color: 'black' })} />
 							<img src={'tesla/interiorWhiteButton.png'} alt="interior white button" onClick={() => this.setState({ color: 'white' })} />
+							{model === 'models' && <img src={'tesla/interiorOakButton.png'} alt="interior oak button" onClick={() => this.setState({ color: 'oak' })} />}
 						</div>
 					</div>
 				</div>
@@ -71,19 +72,25 @@ class App extends Component {
 	};
 
 	render() {
-		const { page } = this.state;
+		const { page, model } = this.state;
 		return (
 			<div className="app">
 				<img src={'tesla/teslaBanner.png'} className="banner" alt="banner" />
 				<div className="navigation">
 					<span onClick={() => this.setState({ page: 'model' })}>Model</span>
-					<span onClick={() => this.setState({ page: 'exterior', color: 'white', wheel: 'aero' })}>Exterior</span>
-					<span onClick={() => this.setState({ page: 'interior', color: 'black' })}>Interior</span>
+					{model && <span onClick={() => this.setState({ page: 'exterior', color: 'white', wheel: 'aero' })}>Exterior</span>}
+					{model && <span onClick={() => this.setState({ page: 'interior', color: 'black' })}>Interior</span>}
 				</div>
 
 				{page === 'model' && this.renderModelPage()}
 				{page === 'exterior' && this.renderExteriorPage()}
 				{page === 'interior' && this.renderInteriorPage()}
+
+				<div className="github">
+					<a href="https://github.com/robghchen/build-tesla" rel="noopener noreferrer" target="_blank">
+						Visit Github repo for source code
+					</a>
+				</div>
 			</div>
 		);
 	}
