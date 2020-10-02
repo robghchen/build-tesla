@@ -11,7 +11,7 @@
 	.navigation {
 		display: flex;
 		justify-content: space-around;
-		padding: 2rem;
+		padding: 4vh;
 		border-bottom: 1px solid silver;
 		span {
 			cursor: pointer;
@@ -32,8 +32,10 @@
 		display: flex;
 		.display {
 			flex: 2;
+			display:flex;
 			border-right: 1px solid silver;
 			.car {
+				margin:auto;
 				width: 100%;
 			}
 		}
@@ -45,11 +47,11 @@
 			.color,
 			.wheel {
 				h3 {
-					padding-left: 2rem;
+					padding-left: 4vw;
 				}
 				.buttons {
 					display: flex;
-					padding: 0 2rem 0 2rem;
+					padding: 0 4vw 0 4vw;
 					img {
 						width: 5vw;
 						cursor: pointer;
