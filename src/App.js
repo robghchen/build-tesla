@@ -86,6 +86,7 @@ class App extends Component {
 				{page === 'exterior' && this.renderExteriorPage()}
 				{page === 'interior' && this.renderInteriorPage()}
 
+				<br />
 				<div className="github">
 					<a href="https://github.com/robghchen/build-tesla/blob/main/src/App.js" rel="noopener noreferrer" target="_blank">
 						Visit Github repo for source code
